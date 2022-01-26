@@ -32,6 +32,7 @@ jobs:
                             username: line,
                             });
               } catch(err) {
+                console.log("The error")
                 console.log(err)
                 if(err.toString() == "HttpError: Not Found"){
                   await github.repos.addCollaborator({
