@@ -38,11 +38,10 @@ jobs:
                             owner: context.repo.owner,
                             repo: context.repo.repo,
                             username: line,
-                            permission: 'push'`
+                            permission: 'push'
                             });
                 } else {
                   core.setFailed(err.toString());
                 }
               }
             });
-
