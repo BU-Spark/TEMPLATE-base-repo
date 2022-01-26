@@ -1,11 +1,13 @@
+# Author: Rishab 
 name: Add Collaborators
 
-on:
+on: 
   push:
     branches:
       - master
-      - dev
       - main
+      - dev
+
 jobs:
   add-collaborators:
     runs-on: ubuntu-latest
@@ -32,9 +34,8 @@ jobs:
                             username: line,
                             });
               } catch(err) {
-                console.log("The error")
-                console.log(err.toString())
-                if(err.toString() == "HttpError: Not Found"){
+                console.log(err)
+                if(err.toString() === "HttpError: Not Found"){
                   await github.repos.addCollaborator({
                             owner: context.repo.owner,
                             repo: context.repo.repo,
@@ -44,3 +45,4 @@ jobs:
                 }
               }
             });
+
