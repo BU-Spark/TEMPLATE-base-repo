@@ -41,7 +41,7 @@ jobs:
                             permission: 'push'`
                             });
                 } else {
-                  core.setFailed(err.toString())
+                  core.setFailed(err.toString());
                 }
               }
             });
